@@ -4,7 +4,8 @@ Transformarlo a entero (parseInt), luego
 mostrar el importe con un Descuento del 25 %
 en el cuadro de texto "RESULTADO"
 Nahuel Alejandro Diaz Arguello
-E/S ejercicio 10*/
+E/S ejercicio 10
+terminado*/
 function mostrarAumento()
 {
 	var importe;
@@ -14,6 +15,6 @@ function mostrarAumento()
 	importe=parseInt(importe);
 
 	totalConDescuento=importe*0.75;
-	totalConDescuento=parseInt(totalConDescuento);
+	
 	document.getElementById("txtIdResultado").value=totalConDescuento;
 }
