@@ -7,8 +7,80 @@ D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es de
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
+ Nahuel Alejandro Diaz Arguello
+ div b
+ tp4 FerreteIluminacion
+
  */
 function CalcularPrecio () 
 {
- 	
+ 	var precio;
+    var cantidadLamparas;
+    var importe;
+    var descuento;
+    var marcaLamparas;
+    var total;
+    var bruto;
+    
+    precio= 35;
+    descuento=0;
+    
+    marcaLamparas=document.getElementById("Marca").value;
+    cantidadLamparas=document.getElementById("txtIdCantidad").value;
+
+        cantidadLamparas=parseInt(cantidadLamparas);
+        
+    importe=precio*cantidadLamparas;
+
+    //A
+    if(cantidadLamparas>=6){
+
+        descuento=importe*0.5; //bien
+    }
+
+    //b
+    if(cantidadLamparas==5 ){
+        if( marcaLamparas=="ArgentinaLuz"){
+            descuento=importe*0.6; //bien
+        }else{
+            descuento=importe*0.7; //bien
+        }
+    } 
+   
+    //c
+    if(cantidadLamparas==4){
+        if(marcaLamparas=="ArgentinaLuz" || marcaLamparas=="FelipeLamparas"){
+            descuento=importe*0.75; //bien
+        }else{
+            descuento=importe*0.80;  //bien
+        }
+    }
+
+    //d
+    if(cantidadLamparas==3){
+        if(marcaLamparas=="ArgentinaLuz"){
+            descuento=importe*0.85; //bien.
+        }else{
+            if(marcaLamparas=="FelipeLamparas"){
+                descuento=importe*0.90;//bien
+            }else{
+                descuento=importe*0.95; //bien
+            }
+        }
+    }
+    
+    if(descuento==0){
+        total=importe;
+    }else{
+        total=descuento;
+    }
+
+    if(total>120 && descuento!=0){
+        bruto=total*1.10;
+       
+        alert("Usted pago " +bruto+ " de IIBB");
+    }
+   
+    document.getElementById("txtIdprecioDescuento").value=total;
+    
 }
