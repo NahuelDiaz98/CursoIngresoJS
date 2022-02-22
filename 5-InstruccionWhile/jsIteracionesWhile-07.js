@@ -1,18 +1,41 @@
 /*
 Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
 e informar la suma acumulada y el promedio.
+Nahuel Alejandro Diaz Arguello
+while 7
+entregado
 */
 function mostrar()
 {
-	var contador;
+	var numero;
 	var acumulador;
+	var promedio;
 	var respuesta;
-	contador=0;
+	var contador;
+
 	acumulador=0;
-	respuesta='si';
+	contador=0;
 
+	do{
+		numero=prompt("Digite un numero: ");
+		numero=parseInt(numero);
+		while(isNaN(numero)){
+			numero=prompt("Error.Digite un numero: ");
 
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/contador;
+		}
+		acumulador+=numero;
+		contador++;
+
+		respuesta=prompt("queres colocar otro numeros? (si | no): ");
+
+	}while(respuesta=="si");
+
+	promedio=acumulador/contador;
+	
+	document.getElementById("txtIdSuma").value=acumulador;
+	document.getElementById("txtIdPromedio").value=promedio;
+
+	//txtIdSuma
+	//txtIdPromedio
 
 }//FIN DE LA FUNCIÓN
